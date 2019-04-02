@@ -1,0 +1,25 @@
+<rss version="2.0"
+ xmlns:content="http://purl.org/rss/1.0/modules/content/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+ <title><?= getSpreadSheetTitle() ?></title>
+ <link>** enter your feed address **</link>
+ <description></description>
+ <?
+ for(var i=0;i<20;i++){
+ if(!getRowData(i)[1]) continue;
+ ?>
+ <item>
+ <title><?= getRowData(i)[0] ?></title>
+ <link><?= getRowData(i)[1] ?></link>
+ <pubDate><?= getRowData(i)[2] ?></pubDate>
+ <dc:creator><![CDATA[<?= getRowData(i)[3] ?>]]></dc:creator>
+ <category><![CDATA[<?= getRowData(i)[4] ?>]]></category>
+ <description><![CDATA[<?= getRowData(i)[5] ?>]]></description>
+ </item>
+ <? } ?>
+</channel>
+
+</rss>
+
